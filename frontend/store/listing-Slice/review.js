@@ -6,7 +6,7 @@ export const destroyReview = createAsyncThunk(
   async ({ id: id, reviewId: reviewId }, { rejectWithValue }) => {
     try {
       let { data } = await axios.delete(
-        `http://localhost:5000/api/listing/review/${id}/${reviewId}`
+        `https://airbnb-project-ex9c.onrender.com/api/listing/review/${id}/${reviewId}`
       );
       return data;
     } catch (err) {

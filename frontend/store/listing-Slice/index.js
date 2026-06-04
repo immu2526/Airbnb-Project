@@ -8,7 +8,9 @@ export const index = createAsyncThunk(
   "api/listing",
   async (_, { rejectWithValue }) => {
     try {
-      let { data } = await axios.get("http://localhost:5000/api/listing");
+      let { data } = await axios.get(
+        "https://airbnb-project-ex9c.onrender.com/api/listing"
+      );
       return data;
     } catch (err) {
       return rejectWithValue(err.response.data);
@@ -22,7 +24,9 @@ export const listingDetails = createAsyncThunk(
   "/listing/:id",
   async (id, { rejectWithValue }) => {
     try {
-      let { data } = await axios.get(`http://localhost:5000/api/listing/${id}`);
+      let { data } = await axios.get(
+        `https://airbnb-project-ex9c.onrender.com/api/listing/${id}`
+      );
       console.log(data);
       return data;
     } catch (err) {
@@ -38,7 +42,7 @@ export const createListing = createAsyncThunk(
   async (formData, { rejectWithValue }) => {
     try {
       let mongo = await axios.post(
-        "http://localhost:5000/api/listing/new",
+        "https://airbnb-project-ex9c.onrender.com/api/listing/new",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -59,7 +63,7 @@ export const updateListing = createAsyncThunk(
   async ({ id, formData }, { rejectWithValue }) => {
     try {
       let mongo = await axios.put(
-        `http://localhost:5000/api/listing/${id}/update`,
+        `https://airbnb-project-ex9c.onrender.com/api/listing/${id}/update`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -81,7 +85,7 @@ export const deleteListing = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       let mongo = await axios.delete(
-        `http://localhost:5000/api/listing/${id}`,
+        `https://airbnb-project-ex9c.onrender.com/api/listing/${id}`,
         {
           withCredentials: true,
         }

@@ -11,7 +11,7 @@ export const authUser = createAsyncThunk(
   ) => {
     try {
       let response = await axios.post(
-        "http://localhost:5000/api/auth/singup",
+        "https://airbnb-project-ex9c.onrender.com/api/auth/singup",
         { username, email, password },
         {
           headers: { "Content-Type": "application/json" },
@@ -32,7 +32,7 @@ export const authLogin = createAsyncThunk(
   async ({ username: username, password: password }, { rejectWithValue }) => {
     try {
       let response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://airbnb-project-ex9c.onrender.com/api/auth/login",
         { username, password },
         {
           headers: { "Content-Type": "application/json" },
@@ -53,9 +53,12 @@ export const authLogout = createAsyncThunk(
   "api/logout",
   async (_, { rejectWithValue }) => {
     try {
-      let { data } = await axios.get("http://localhost:5000/api/auth/logout", {
-        withCredentials: true,
-      });
+      let { data } = await axios.get(
+        "https://airbnb-project-ex9c.onrender.com/api/auth/logout",
+        {
+          withCredentials: true,
+        }
+      );
       console.log(data);
       return data;
     } catch (err) {
@@ -71,7 +74,7 @@ export const checkAuth = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       let { data } = await axios.get(
-        "http://localhost:5000/api/auth/checkaouth",
+        "https://airbnb-project-ex9c.onrender.com/api/auth/checkaouth",
         {
           withCredentials: true,
         }

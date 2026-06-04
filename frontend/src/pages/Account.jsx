@@ -58,34 +58,6 @@ const Account = () => {
         toast.error(err);
         setLoading(false);
       });
-
-    // try {
-    //
-    //   const res = await fetch("http://localhost:5000/api/auth/singup", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     credentials: "include",
-    //     body: JSON.stringify({
-    //       username: form.username,
-    //       email: form.email,
-    //       password: form.password,
-    //     }),
-    //   });
-
-    //   const data = await res.json();
-    //   console.log(data);
-
-    //   if (!res.ok) {
-    //     setError(data.message || "Somethig was wrong!");
-    //     return;
-    //   }
-
-    //   navigate("/login"); // signup ke baad login pe bhejo
-    // } catch (err) {
-    //   setError("Server not connected!");
-    // } finally {
-    //   setLoading(false);
-    // }
   };
 
   return (
