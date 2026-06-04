@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Environment Variables - SECRET KEYS!
+.env
+.env.local
+.env.production
+.env.development
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
