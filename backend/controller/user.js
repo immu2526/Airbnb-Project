@@ -70,7 +70,11 @@ let authLogin = async (req, res) => {
 // logout
 
 let authLogout = async (req, res) => {
-  res.clearCookie("token");
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+  });
   res.status(200).json({
     success: true,
     data: "Logged out successfully",
