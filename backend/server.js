@@ -33,7 +33,7 @@ main()
 
 app.use(
   cors({
-    origin: "https://airbnb-project-5kk2qgoz4-immu2526s-projects.vercel.app",
+    origin: "https://airbnb-project-ashy-five.vercel.app",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
