@@ -18,7 +18,7 @@ const Review = () => {
 
     try {
       let response = await axios.post(
-        "http://localhost:5000/api/listing/review/new",
+        "https://airbnb-project-ex9c.onrender.com/api/listing/review/new",
         {
           rating: rating,
           comment: review,
